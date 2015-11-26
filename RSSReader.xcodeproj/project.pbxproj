@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		295644ED64B67779A3557F33 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8AA143194362C900C3888B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		AAC02B13193DEEFE003997F3 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC02B17193DEEFE003997F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,7 +42,7 @@
 		AAC02B35193DF2B8003997F3 /* RSSReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		AAC02B39193DF344003997F3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AFE16BB7AB9C49C5B4EFAE90 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E885CC41F32F4E3AA56367A0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C150174EB96454DF8B9DDE86 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		710AC2CB85D52B3E762C97DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				295644ED64B67779A3557F33 /* Pods.debug.xcconfig */,
+				C150174EB96454DF8B9DDE86 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AAC02B0A193DEEFE003997F3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +88,8 @@
 				AAC02B15193DEEFE003997F3 /* RSSReader */,
 				AAC02B28193DEEFE003997F3 /* RSSReaderTests */,
 				AAC02B14193DEEFE003997F3 /* Products */,
-				E885CC41F32F4E3AA56367A0 /* Pods.xcconfig */,
 				70FA9D20B8584551BECCAF8B /* Frameworks */,
+				710AC2CB85D52B3E762C97DA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +153,7 @@
 				AAC02B10193DEEFE003997F3 /* Frameworks */,
 				AAC02B11193DEEFE003997F3 /* Resources */,
 				5D1F79F4E393422A8E38BE19 /* Copy Pods Resources */,
+				E3D7F3F224166DCCE1BD1913 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,7 +188,9 @@
 		AAC02B0B193DEEFE003997F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = susieyy;
 				TargetAttributes = {
 					AAC02B12193DEEFE003997F3 = {
@@ -257,7 +270,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D7F3F224166DCCE1BD1913 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -323,6 +351,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -383,13 +412,14 @@
 		};
 		AAC02B30193DEEFE003997F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E885CC41F32F4E3AA56367A0 /* Pods.xcconfig */;
+			baseConfigurationReference = 295644ED64B67779A3557F33 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RSSReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.susiea.rssreader.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSSReader/RSSReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -398,13 +428,14 @@
 		};
 		AAC02B31193DEEFE003997F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E885CC41F32F4E3AA56367A0 /* Pods.xcconfig */;
+			baseConfigurationReference = C150174EB96454DF8B9DDE86 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RSSReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.susiea.rssreader.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSSReader/RSSReader-Bridging-Header.h";
 			};
@@ -425,6 +456,7 @@
 				INFOPLIST_FILE = RSSReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.susiea.rssreader.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -441,6 +473,7 @@
 				INFOPLIST_FILE = RSSReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.susiea.rssreader.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
